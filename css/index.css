@@ -147,6 +147,8 @@ body {
   z-index: 3;
   letter-spacing: 4px;
   line-height: 1.3;
+  text-align: center;
+  width: 100vw;
 }
 .intro header h1 {
   font-size: 6rem;
@@ -175,21 +177,27 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 80%;
+  margin-left: 10px;
+  align-content: center;
 }
 .content {
   border: solid rgba(0, 47, 75, 0.6) 3px;
-  width: 50%;
-  height: 55%;
+  width: 90vw;
+  height: 65%;
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 .content h2 {
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   background-color: white;
+  color: #002f4b;
   margin-top: -15px;
   margin-bottom: 25px;
   width: 30%;
@@ -197,16 +205,120 @@ body {
   padding: 0 50px;
 }
 .content--p {
-  width: 60%;
+  width: 60vw;
   line-height: 1.7;
   letter-spacing: 1px;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  margin-top: 30px;
 }
 .content--p p {
   margin-bottom: 10px;
 }
-.services {
+.specialties {
   background-image: linear-gradient(to bottom right, rgba(0, 47, 75, 0.6), rgba(220, 66, 37, 0.6)), url("https://images.unsplash.com/photo-1481887328591-3e277f9473dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1360&q=80");
   background-position: center;
   height: 42vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.specialties .content {
+  border: none;
+}
+.specialties .content h2 {
+  background-color: transparent;
+  color: white;
+}
+.specialties .content--i {
+  color: white;
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 3rem;
+  flex-wrap: wrap;
+}
+.specialties .content--i img {
+  margin-left: -8px;
+  width: 49px;
+  height: 45px;
+}
+html,
+body {
+  color: #681;
+  background: #fff;
+  min-width: 700px;
+}
+/* ---- Timeline ---- */
+ol {
+  position: relative;
+  display: block;
+  margin: 100px;
+  height: 4px;
+  background: #31708F;
+}
+ol::before {
+  left: -5px;
+}
+ol::after {
+  right: -10px;
+  border: 10px solid transparent;
+  border-right: 0;
+  border-left: 20px solid #31708F;
+  border-radius: 3px;
+}
+/* ---- Timeline elements ---- */
+li {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 150px;
+  font: bold 14px arial;
+  height: 50px;
+}
+li .diplome {
+  position: absolute;
+  top: -47px;
+  left: 36%;
+  color: #000000;
+}
+li .point {
+  content: "";
+  top: -4px;
+  left: 43%;
+  display: block;
+  width: 6px;
+  height: 6px;
+  border: 4px solid #31708F;
+  border-radius: 10px;
+  background: #fff;
+  position: absolute;
+}
+li .description {
+  display: none;
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-top: 20px;
+  position: relative;
+  font-weight: normal;
+  z-index: 1;
+}
+.description::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #f4f4f4;
+  position: absolute;
+  top: -5px;
+  left: 43%;
+}
+/* ---- Hover effects ---- */
+li:hover {
+  cursor: pointer;
+  color: #48A4D2;
+}
+li:hover .description {
+  display: block;
 }
