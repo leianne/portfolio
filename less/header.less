@@ -1,13 +1,21 @@
-.intro {
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: rgba(0, 47, 78, .55);
+  font-size: 16px;
+}
+.intro{
   background-image: linear-gradient(
       to bottom right,
       rgba(0, 47, 75, 0.6),
       rgba(220, 66, 37, 0.6)
     ),
-    url("http://unsplash.it/1200x800");
+    url("https://images.unsplash.com/photo-1548407260-da850faa41e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1774&q=80");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
   header {
     display: flex;
     justify-content: center;
@@ -34,7 +42,8 @@
 
     p:first-child {
       color: rgba(0, 47, 75, 1);
-      font-weight: 300;
+      font-weight: 700;
+      font-size: 40px;
     }
 
     i {
@@ -49,18 +58,23 @@
   }
 }
 .about {
+  position: relative;
   background-color: white;
   height: 58vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  margin-left: 10px;
   align-content: center;
+  
+  h2 {
+    position: absolute;
+    top: 0;
+  }
 }
 
 .content {
-  border: solid rgba(0, 47, 75, 0.6) 3px;
+  border: rgba(0, 47, 75, 0.6) solid 2px;
+  position: relative;
   width: 90vw;
   height: 65%;
   text-align: center;
@@ -69,32 +83,55 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  h2 {
+  @media @phone {
+    height: 80%;
+  }
+   h2 {
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     background-color: white;
-    color: rgb(0, 47, 75);
+    color: rgba(0, 47, 75, .75);
     margin-top: -15px;
     margin-bottom: 25px;
-    width: 30%;
     display: inline-block;
     padding: 0 50px;
   }
-
+  &--t {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #252827;
+    border: none;
+    width: 100vw;
+    h2 {
+      margin: 69px 0 -50px 0px;
+      color: white;
+      background-color: transparent;
+    }
+    @media @phone {
+      width: 92vw;
+    }
+  }
+ 
   &--p {
     width: 60vw;
     line-height: 1.7;
     letter-spacing: 1px;
     font-size: 0.9rem;
     margin-top: 30px;
+
+    @media @phone {
+      width: 80vw;
+    }
     p {
       margin-bottom: 10px;
     }
   }
 }
 
-.specialties {
+.technologies {
   background-image: linear-gradient(
       to bottom right,
       rgba(0, 47, 75, 0.6),
@@ -106,7 +143,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  position: relative;
   .content {
     border: none;
 
@@ -123,6 +160,10 @@
         margin-top: 20px;
         font-size: 3rem;
         flex-wrap: wrap;
+        @media @phone {
+          width: 80vw;
+        }
+        
         img {
             margin-left: -8px;
             width: 49px;

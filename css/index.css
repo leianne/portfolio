@@ -129,12 +129,22 @@ table {
 body {
   font-family: 'Dosis', sans-serif;
   font-size: 62.5%;
+  width: 100vw;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: rgba(0, 47, 78, 0.55);
+  font-size: 16px;
 }
 .intro {
-  background-image: linear-gradient(to bottom right, rgba(0, 47, 75, 0.6), rgba(220, 66, 37, 0.6)), url("http://unsplash.it/1200x800");
+  background-image: linear-gradient(to bottom right, rgba(0, 47, 75, 0.6), rgba(220, 66, 37, 0.6)), url("https://images.unsplash.com/photo-1548407260-da850faa41e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1774&q=80");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 .intro header {
   display: flex;
@@ -161,7 +171,8 @@ body {
 }
 .intro header p:first-child {
   color: #002f4b;
-  font-weight: 300;
+  font-weight: 700;
+  font-size: 40px;
 }
 .intro header i {
   font-size: 1.5rem;
@@ -172,17 +183,21 @@ body {
   color: rgba(0, 47, 75, 0.6);
 }
 .about {
+  position: relative;
   background-color: white;
   height: 58vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  margin-left: 10px;
   align-content: center;
 }
+.about h2 {
+  position: absolute;
+  top: 0;
+}
 .content {
-  border: solid rgba(0, 47, 75, 0.6) 3px;
+  border: rgba(0, 47, 75, 0.6) solid 2px;
+  position: relative;
   width: 90vw;
   height: 65%;
   text-align: center;
@@ -192,17 +207,40 @@ body {
   justify-content: center;
   align-content: center;
 }
+@media (max-width:650px) {
+  .content {
+    height: 80%;
+  }
+}
 .content h2 {
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   background-color: white;
-  color: #002f4b;
+  color: rgba(0, 47, 75, 0.75);
   margin-top: -15px;
   margin-bottom: 25px;
-  width: 30%;
   display: inline-block;
   padding: 0 50px;
+}
+.content--t {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #252827;
+  border: none;
+  width: 100vw;
+}
+.content--t h2 {
+  margin: 69px 0 -50px 0px;
+  color: white;
+  background-color: transparent;
+}
+@media (max-width:650px) {
+  .content--t {
+    width: 92vw;
+  }
 }
 .content--p {
   width: 60vw;
@@ -211,25 +249,31 @@ body {
   font-size: 0.9rem;
   margin-top: 30px;
 }
+@media (max-width:650px) {
+  .content--p {
+    width: 80vw;
+  }
+}
 .content--p p {
   margin-bottom: 10px;
 }
-.specialties {
+.technologies {
   background-image: linear-gradient(to bottom right, rgba(0, 47, 75, 0.6), rgba(220, 66, 37, 0.6)), url("https://images.unsplash.com/photo-1481887328591-3e277f9473dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1360&q=80");
   background-position: center;
   height: 42vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-.specialties .content {
+.technologies .content {
   border: none;
 }
-.specialties .content h2 {
+.technologies .content h2 {
   background-color: transparent;
   color: white;
 }
-.specialties .content--i {
+.technologies .content--i {
   color: white;
   display: flex;
   width: 70%;
@@ -238,87 +282,147 @@ body {
   font-size: 3rem;
   flex-wrap: wrap;
 }
-.specialties .content--i img {
+@media (max-width:650px) {
+  .technologies .content--i {
+    width: 80vw;
+  }
+}
+.technologies .content--i img {
   margin-left: -8px;
   width: 49px;
   height: 45px;
 }
-html,
-body {
-  color: #681;
-  background: #fff;
-  min-width: 700px;
+/* Import */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Oswald Light'), local('Oswald-Light'), url(https://fonts.gstatic.com/s/oswald/v16/TK3hWkUHHAIjg75-sh0Tus9H.ttf) format('truetype');
 }
-/* ---- Timeline ---- */
-ol {
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v16/TK3iWkUHHAIjg752GT8D.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oswald Bold'), local('Oswald-Bold'), url(https://fonts.gstatic.com/s/oswald/v16/TK3hWkUHHAIjg75-ohoTus9H.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3i94_wlxdr.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdr.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7g.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdr.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdr.ttf) format('truetype');
+}
+/* Variables */
+/* Base */
+strong {
+  font-weight: 600;
+}
+h1 {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1.5px;
+  color: white;
+  font-weight: 100;
+  font-size: 2.4em;
+}
+/* Timeline */
+.content--timeline {
+  height: 62vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.timeline {
+  border-left: 4px solid #4298C3;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 50px auto;
+  letter-spacing: 0.5px;
   position: relative;
-  display: block;
-  margin: 100px;
-  height: 4px;
-  background: #31708F;
+  line-height: 1.4em;
+  font-size: 1.03em;
+  padding: 50px;
+  list-style: none;
+  text-align: left;
+  font-weight: 100;
+  max-width: 51%;
 }
-ol::before {
-  left: -5px;
+@media (max-width:650px) {
+  .timeline {
+    margin-left: 78px;
+  }
 }
-ol::after {
-  right: -10px;
-  border: 10px solid transparent;
-  border-right: 0;
-  border-left: 20px solid #31708F;
-  border-radius: 3px;
+.timeline h1,
+.timeline h2,
+.timeline h3 {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1.7px;
+  font-weight: 100;
+  font-size: 1rem;
 }
-/* ---- Timeline elements ---- */
-li {
+.timeline .event {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 2.25px;
   position: relative;
-  display: inline-block;
-  float: left;
-  width: 150px;
-  font: bold 14px arial;
-  height: 50px;
 }
-li .diplome {
+.timeline .event:last-of-type {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: none;
+}
+.timeline .event:before,
+.timeline .event:after {
   position: absolute;
-  top: -47px;
-  left: 36%;
-  color: #000000;
+  display: block;
+  top: 0;
 }
-li .point {
+.timeline .event:before {
+  left: -217.5px;
+  color: rgba(255, 255, 255, 0.4);
+  content: attr(data-date);
+  text-align: right;
+  font-weight: 100;
+  font-size: 0.9em;
+  min-width: 120px;
+}
+.timeline .event:after {
+  box-shadow: 0 0 0 4px #4298c3;
+  left: -57.85px;
+  background: #313534;
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
   content: "";
-  top: -4px;
-  left: 43%;
-  display: block;
-  width: 6px;
-  height: 6px;
-  border: 4px solid #31708F;
-  border-radius: 10px;
-  background: #fff;
-  position: absolute;
-}
-li .description {
-  display: none;
-  background-color: #f4f4f4;
-  padding: 10px;
-  margin-top: 20px;
-  position: relative;
-  font-weight: normal;
-  z-index: 1;
-}
-.description::before {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid #f4f4f4;
-  position: absolute;
-  top: -5px;
-  left: 43%;
-}
-/* ---- Hover effects ---- */
-li:hover {
-  cursor: pointer;
-  color: #48A4D2;
-}
-li:hover .description {
-  display: block;
+  top: 5px;
 }
