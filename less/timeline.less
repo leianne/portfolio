@@ -2,26 +2,6 @@
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Oswald:400,300,700);
 
-/* Variables */
-
-@background: #252827;
-
-@color-primary: #4298C3;
-@color-light: white;
-@spacing: 50px;
-@radius: 4px;
-
-@date: 120px;
-@dotborder: 4px;
-@dot: 11px;
-@line: 4px;
-
-@font-title: 'Oswald', sans-serif;
-@font-text: 'Source Sans Pro', sans-serif;
-
-/* Base */
-
-
 
 strong {
   font-weight: 600;
@@ -35,24 +15,38 @@ h1 {
  font-size: 2.4em;
 }
 
-
+.experiences {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(0, 47, 75, 0.6),
+      rgba(220, 66, 37, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1548506923-99f6e89852fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1354&q=80");
+}
 
 /* Timeline */
 .content--timeline{
-  height: 62vh;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  
+  overflow: hidden;
 }
 .timeline {
-  border-left: @line solid @color-primary;
+  color: white;
+  letter-spacing: 2px;
+  border-left: @line solid rgba(0, 47, 75, 0.6);
   border-bottom-right-radius: @radius;
   border-top-right-radius: @radius;    
-  background: fade(@color-light, 3%);
+  background: fade(rgb(255, 255, 255), 0%);
   font-family: @font-text;  
-  margin: @spacing auto;  
+  margin: 0 auto;  
   letter-spacing: 0.5px;   
   position: relative;
   line-height: 1.4em;
@@ -91,7 +85,7 @@ h1 {
 
     &:before {
       left: (((@date * 0.6) + @spacing + @line + @dot + (@dotborder * 2)) * 1.5) * -1;    
-      color: fade(@color-light, 40%);    
+      color: fade(white, 70%);    
       content: attr(data-date);
       text-align: right;
       font-weight: 100;    
@@ -100,7 +94,7 @@ h1 {
     }
 
     &:after {
-      box-shadow: 0 0 0 @dotborder fade(@color-primary,100%);    
+      box-shadow: 0 0 0 @dotborder fade(@color-primary,40%);    
       left: (@spacing + @line + (@dot * 0.35)) * -1;        
       background: lighten(@background,5%);    
       border-radius: 50%;  

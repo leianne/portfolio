@@ -1,7 +1,7 @@
 html, body {
   max-width: 100%;
   overflow-x: hidden;
-  background-color: rgba(0, 47, 78, .55);
+  background-color: rgba(0, 47, 78, .45);
   font-size: 16px;
 }
 .intro{
@@ -32,6 +32,7 @@ html, body {
     h1 {
       font-size: 6rem;
       margin-top: -15px;
+      color: white;
     }
 
     p {
@@ -83,6 +84,16 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+
+  &--projects {
+    border: none;
+    width: 100%;
+    height: 100%;
+    .projects-header {
+      margin: 0
+    }
+  }
+
   @media @phone {
     height: 80%;
   }
@@ -106,7 +117,7 @@ html, body {
     border: none;
     width: 100vw;
     h2 {
-      margin: 69px 0 -50px 0px;
+      margin: 0;
       color: white;
       background-color: transparent;
     }

@@ -130,12 +130,17 @@ body {
   font-family: 'Dosis', sans-serif;
   font-size: 62.5%;
   width: 100vw;
+  box-sizing: border-box;
+  margin: 0;
+}
+img {
+  max-width: 100%;
 }
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-  background-color: rgba(0, 47, 78, 0.55);
+  background-color: rgba(0, 47, 78, 0.45);
   font-size: 16px;
 }
 .intro {
@@ -163,6 +168,7 @@ body {
 .intro header h1 {
   font-size: 6rem;
   margin-top: -15px;
+  color: white;
 }
 .intro header p {
   font-size: 1.3rem;
@@ -207,6 +213,14 @@ body {
   justify-content: center;
   align-content: center;
 }
+.content--projects {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+.content--projects .projects-header {
+  margin: 0;
+}
 @media (max-width:650px) {
   .content {
     height: 80%;
@@ -233,7 +247,7 @@ body {
   width: 100vw;
 }
 .content--t h2 {
-  margin: 69px 0 -50px 0px;
+  margin: 0;
   color: white;
   background-color: transparent;
 }
@@ -341,33 +355,42 @@ body {
   font-weight: 700;
   src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdr.ttf) format('truetype');
 }
-/* Variables */
-/* Base */
 strong {
   font-weight: 600;
 }
 h1 {
   font-family: 'Oswald', sans-serif;
   letter-spacing: 1.5px;
-  color: white;
+  color: black;
   font-weight: 100;
   font-size: 2.4em;
 }
+.experiences {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  background-image: linear-gradient(to bottom right, rgba(0, 47, 75, 0.6), rgba(220, 66, 37, 0.6)), url("https://images.unsplash.com/photo-1548506923-99f6e89852fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1354&q=80");
+}
 /* Timeline */
 .content--timeline {
-  height: 62vh;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  overflow: hidden;
 }
 .timeline {
-  border-left: 4px solid #4298C3;
+  color: white;
+  letter-spacing: 2px;
+  border-left: 4px solid rgba(0, 47, 75, 0.6);
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0);
   font-family: 'Source Sans Pro', sans-serif;
-  margin: 50px auto;
+  margin: 0 auto;
   letter-spacing: 0.5px;
   position: relative;
   line-height: 1.4em;
@@ -392,7 +415,7 @@ h1 {
   font-size: 1rem;
 }
 .timeline .event {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
   padding-bottom: 2.25px;
   position: relative;
 }
@@ -409,7 +432,7 @@ h1 {
 }
 .timeline .event:before {
   left: -217.5px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.7);
   content: attr(data-date);
   text-align: right;
   font-weight: 100;
@@ -417,7 +440,7 @@ h1 {
   min-width: 120px;
 }
 .timeline .event:after {
-  box-shadow: 0 0 0 4px #4298c3;
+  box-shadow: 0 0 0 4px rgba(0, 47, 75, 0.4);
   left: -57.85px;
   background: #313534;
   border-radius: 50%;
@@ -425,4 +448,77 @@ h1 {
   width: 11px;
   content: "";
   top: 5px;
+}
+.projects {
+  height: 50vh;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.projects--container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.project {
+  width: 50%;
+  border: white 3px solid;
+}
+.project--large {
+  width: 50%;
+}
+.grid {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.grid .cell {
+  width: 49.79%;
+  border: solid white 4px;
+  border-top: 6px solid white;
+  border-bottom: 6px solid white;
+  font-size: 40px;
+  color: white;
+}
+.grid .cell--1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(to bottom right, rgba(20, 94, 136, 0.5), rgba(0, 47, 75, 0.5)), url('../img/luncherFinal.png');
+}
+.grid .cell--2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(to bottom right, rgba(20, 94, 136, 0.5), rgba(0, 47, 75, 0.5)), url('../img/yelpcamp.png');
+}
+.grid .cell--3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(to bottom right, rgba(20, 94, 136, 0.5), rgba(0, 47, 75, 0.5)), url('../img/lambdaTimes.png');
+}
+.grid .cell--4 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(to bottom right, rgba(20, 94, 136, 0.5), rgba(0, 47, 75, 0.5)), url('../img//luncher2.png');
+}
+.grid img {
+  max-width: 100%;
+  max-height: 100%;
+}
+footer {
+  color: rgba(0, 47, 75, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+  font-size: 20px;
+  height: 50px;
+  background-color: aliceblue;
+}
+.footer--icons {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  justify-content: space-around;
 }
