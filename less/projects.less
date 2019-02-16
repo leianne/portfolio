@@ -18,8 +18,32 @@
     &--large {
         width: 50%;
     }
-}
+    
+    &--icons {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        position: absolute;
+        top: 0;
+        z-index: 5;
 
+        
+        a {
+            padding: 5px;
+        }
+        i:hover {
+            z-index: 5;
+        }
+        i:hover {
+            z-index: 5;
+            color: rgba(20, 94, 136, 0.5)
+
+        }
+    }
+}
+.grid .cell a i:hover {
+
+}
 
 .grid {
     display: flex;
@@ -32,6 +56,32 @@
         border-bottom: 6px solid white;
         font-size: 40px;
         color: white;
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        h3{
+            // padding: 40px;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.85);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            position: absolute;
+            z-index: 5;
+            bottom: 0;
+            margin-right: 40px;
+            margin-bottom: 10px;
+        }
+
+        a i {
+            color: rgba(255, 255, 255, 0.85);
+            width: 100%;
+        }
+
+        a i:hover {
+            color:  rgba(20, 94, 136, 0.5);
+        }
+
         &--1 {
             background-repeat: no-repeat;
             background-size: cover;
@@ -39,7 +89,9 @@
                 to bottom right,
                 rgba(20, 94, 136, 0.5),
                 rgba(0, 47, 75, 0.5)
-              ),url('../img/luncherFinal.png')
+              ),url('../img/luncherFinal.png');
+              color: white;
+              
         } 
         &--2 {
             background-repeat: no-repeat;
